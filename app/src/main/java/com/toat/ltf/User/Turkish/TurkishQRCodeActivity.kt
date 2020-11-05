@@ -2,6 +2,7 @@ package com.toat.ltf.User.Turkish
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.zxing.Result
 import com.toat.ltf.R
@@ -21,6 +22,7 @@ class TurkishQRCodeActivity : AppCompatActivity(), ZXingScannerView.ResultHandle
         setContentView(R.layout.activity_turkish_qr_code)
 
         this.SetToolbar()
+        this.OnClick()
 
         this.scannerView = findViewById(R.id.scanner)
     }
@@ -35,6 +37,16 @@ class TurkishQRCodeActivity : AppCompatActivity(), ZXingScannerView.ResultHandle
             this.supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         }
 
+    }
+
+    private fun OnClick(){
+        this.toolbar_head_main.setNavigationOnClickListener {
+            this.onBackPressed()
+        }
+
+        this.bt_go_grade.setOnClickListener {
+            Toast.makeText(applicationContext, "ไป  ไป  ไป ไป ไป ตีเกรด", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onResume() {
@@ -58,8 +70,16 @@ class TurkishQRCodeActivity : AppCompatActivity(), ZXingScannerView.ResultHandle
         Log.w(TAG, result!!.text); // Prints scan results
         Log.w(TAG, result.barcodeFormat.toString()); // Prints the scan format (qrcode, pdf417 etc.)
 
+        Toast.makeText(applicationContext,  result.text.toString(), Toast.LENGTH_SHORT).show()
+
         // If you would like to resume scanning, call this method below:
 //        this.scannerView!!.resumeCameraPreview(this);
         this.onResume()
+    }
+
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        this.finish()
     }
 }

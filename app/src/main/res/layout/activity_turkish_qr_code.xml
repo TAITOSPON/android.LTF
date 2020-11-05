@@ -29,7 +29,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="bottom|right">
+
+        <Button
+            android:background="@color/white"
+            android:id="@+id/bt_go_grade"
+            android:layout_marginBottom="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:text="dsgsdfdsf"/>
 
     </LinearLayout>
 
