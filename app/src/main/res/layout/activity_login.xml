@@ -3,44 +3,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@drawable/side_nav_bar"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <com.toat.ltf.Tool.BaseStatusBar
+        android:id="@+id/base_status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        tools:ignore="MissingConstraints" />
 
-    <LinearLayout
-        android:background="@color/teal_700"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/layout_box_login"
+    <Toolbar
+        android:id="@+id/toolbar_login"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_marginTop="24dp"
+        android:background="@color/transparent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/icon_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="LOGO"
-            android:textColor="@color/white"
-            android:textSize="25dp"/>
-
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-
         android:id="@+id/layout_box_login"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-
+        android:background="@drawable/shape_layout_login"
         android:elevation="2dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/img_logo">
 
 
         <LinearLayout
@@ -131,7 +136,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginBottom="20dp"
-                android:background="@color/white"
+                android:background="@drawable/shape_layout_submit_login"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:text="sdfsdfsdf"
                 android:textAllCaps="false"
@@ -154,7 +159,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginBottom="20dp"
-                android:background="@color/white"
+                android:background="@drawable/shape_layout_submit_login"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:text="get"
                 android:textAllCaps="false"

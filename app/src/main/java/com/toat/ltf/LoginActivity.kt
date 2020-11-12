@@ -3,6 +3,7 @@ package com.toat.ltf
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.toat.ltf.Model.UserLoginModel
@@ -20,25 +21,31 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        this.window.statusBarColor = getColor(R.color.transparent)
+
         this.OnClick()
 
+        this.layout_box_login.animation = AnimationUtils.loadAnimation(
+            this,
+            R.anim.anim_up_from_buttom
+        )
 
     }
     private fun get(){
 
         val url= "http://192.168.137.1:5000/testget"
 //        val url ="https://webhook.toat.co.th/linebot/web/index.php/api/Api_User/list_log_login"
-        GetData(url, object : GetData.CallBackPostData{
+        GetData(url, object : GetData.CallBackPostData {
             override fun OnSuccess(str_data: String?) {
-                Log.d(TAG ,"OnSuccess + $str_data")
+                Log.d(TAG, "OnSuccess + $str_data")
             }
 
             override fun OnErrorIOException(IOException_message: String?) {
-                Log.d(TAG ,"OnErrorIOException ")
+                Log.d(TAG, "OnErrorIOException ")
             }
 
             override fun OnError() {
-                Log.d(TAG ,"OnError ")
+                Log.d(TAG, "OnError ")
             }
 
         })
@@ -50,17 +57,17 @@ class LoginActivity : AppCompatActivity() {
         val json = Gson().toJson(UserLoginModel("002892", "002892"))
         Log.w(TAG, "json = $json")
 
-        PostData(url,json, object : PostData.CallBackPostData{
+        PostData(url, json, object : PostData.CallBackPostData {
             override fun OnSuccess(str_data: String?) {
-                Log.d(TAG ,"OnSuccess + $str_data")
+                Log.d(TAG, "OnSuccess + $str_data")
             }
 
             override fun OnErrorIOException(IOException_message: String?) {
-                Log.d(TAG ,"OnErrorIOException ")
+                Log.d(TAG, "OnErrorIOException ")
             }
 
             override fun OnError() {
-                Log.d(TAG ,"OnError ")
+                Log.d(TAG, "OnError ")
             }
 
         })

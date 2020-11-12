@@ -7,6 +7,8 @@ import android.util.Log
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.toat.ltf.Tool.CheckPermission
+import com.toat.ltf.Tool.SetColorStatusBar
+import kotlinx.android.synthetic.main.activity_launch.*
 
 class LaunchActivity: AppCompatActivity() {
 
@@ -16,8 +18,11 @@ class LaunchActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_launch)
 
+        // todo set color status bar //
+        SetColorStatusBar().setStatusBarTransparent(this@LaunchActivity)
+
         this.Checkpermission()
-//        profile.startAnimation(AnimationUtils.loadAnimation(this, R.anim.anim_show))
+        img_logo.startAnimation(AnimationUtils.loadAnimation(this, R.anim.anim_show))
     }
 
 
