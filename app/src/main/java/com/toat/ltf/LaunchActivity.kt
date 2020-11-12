@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
+import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.toat.ltf.Tool.CheckPermission
 
@@ -16,6 +17,7 @@ class LaunchActivity: AppCompatActivity() {
         setContentView(R.layout.activity_launch)
 
         this.Checkpermission()
+//        profile.startAnimation(AnimationUtils.loadAnimation(this, R.anim.anim_show))
     }
 
 
@@ -32,15 +34,15 @@ class LaunchActivity: AppCompatActivity() {
     private fun Checkpermission(){
 
         // TODO Check Permission //
-        CheckPermission(this,object : CheckPermission.CheckPermissionCallback{
+        CheckPermission(this, object : CheckPermission.CheckPermissionCallback {
             override fun OnSuccessCallback() {
-                Log.d(TAG,"CheckPermission OnSuccessCallback")
+                Log.d(TAG, "CheckPermission OnSuccessCallback")
 
                 this@LaunchActivity.Start()
             }
 
             override fun OnErrorCallback() {
-                Log.d(TAG,"CheckPermission OnErrorCallback")
+                Log.d(TAG, "CheckPermission OnErrorCallback")
 
                 Handler().postDelayed({
                     this@LaunchActivity.Checkpermission()

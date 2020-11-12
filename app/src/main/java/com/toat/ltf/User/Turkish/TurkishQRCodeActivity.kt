@@ -32,7 +32,7 @@ class TurkishQRCodeActivity : AppCompatActivity(), ZXingScannerView.ResultHandle
 
         this.setSupportActionBar(toolbar_head_main)
         if(this.supportActionBar != null){
-            this.supportActionBar!!.title = getString(R.string.string_empty)
+            this.supportActionBar!!.title = getString(R.string.txt_empty)
             this.supportActionBar!!.setHomeAsUpIndicator(R.drawable.icon_back_white)
             this.supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         }

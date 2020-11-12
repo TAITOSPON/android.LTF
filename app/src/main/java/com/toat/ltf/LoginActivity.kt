@@ -8,7 +8,7 @@ import com.google.gson.Gson
 import com.toat.ltf.Model.UserLoginModel
 import com.toat.ltf.ServiceAPI.GetData
 import com.toat.ltf.ServiceAPI.PostData
-import com.toat.ltf.User.UserMainActivity
+import com.toat.ltf.User.Main.UserMainActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
 
@@ -73,9 +73,9 @@ class LoginActivity : AppCompatActivity() {
             this.Goto_MainActivity()
         }
 
-        this.bt_login_login.setOnClickListener{
-            this.post()
-        }
+//        this.bt_login_login.setOnClickListener{
+//            this.post()
+//        }
 
         this.bt_login_login2.setOnClickListener{
             this.get()

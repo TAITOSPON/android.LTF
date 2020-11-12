@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
-        <activity android:name=".User.UserMainActivity"/>
+        <activity android:name=".User.Main.UserMainActivity"/>
         <activity android:name=".User.Turkish.TurkishGradeActivity"/>
         <activity android:name=".User.Turkish.TurkishQRCodeActivity"/>
     </application>
